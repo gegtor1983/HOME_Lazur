@@ -1,11 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
+    <script>
+        function calc1() {
+            const a=parseFloat(document.getElementById ('year1').value)
+            const b=parseFloat(document.getElementById ('year2').value)
+            const c=parseFloat(document.getElementById ('year3').value)
+            const sum=a+b+c
+            return sum
+
+        }
+        function calc2() {
+            const stPod=parseFloat(document.getElementById('pod').value)
+            const a=parseFloat(document.getElementById ('year1').value)
+            const b=parseFloat(document.getElementById ('year2').value)
+            const c=parseFloat(document.getElementById ('year3').value)
+            sum2=a+b+c
+            return sum2*stPod/100
+            
+        }
+        
+        function calcClic() {
+            const clic=calc1 ()
+            document.getElementById ('avg').innerText=clic
+            
+        }
+        function calcClic2() {
+            const clic2=calc2()
+            document.getElementById ('avg2').innerText=clic2
+            
+        }
+        window.onload=function() {
+            document.getElementById ('btn').onclick=calcClic
+            document.getElementById ('btn2').onclick=calcClic2
+            
+        }
     
+    </script>
+</head>
+
+<body>
+    <table border="2px">
+
+        <tr>
+            <th>Рік</th>
+            <th>Розмір прибутку</th>
+        </tr>
+        <tbody id="Container">
+            <tr>
+                <td>2017 рік</td>
+                <td><input type="number" id="year1"></td>
+            </tr>
+            <tr>
+                <td>2018 рік</td>
+                <td><input type="number" id="year2"></td>
+            </tr>
+            <tr>
+                <td>2019 рік</td>
+                <td><input type="number" id="year3"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="btn">
+Обчислити
+    </button>
+    <p>
+        Загальний прибуток за весь період : <span id="avg"></span>
+
+    </p>
+    <button id="btn2">
+Обчислити загальну суму податків
+    </button>
+    <p>
+        Вкажыть ставку водатку (%) <span><input type="number" name="" id="pod"></span>
+    </p>
+<p>
+    Загальна кількість виплачених податків: <span id="avg2"></span>
+</p>
 </body>
+
 </html>
