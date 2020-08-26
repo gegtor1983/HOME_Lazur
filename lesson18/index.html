@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-     let a1={
-         pr1:11,
-         age:13,
-         vs:90
-     }  
-     for (const key in a1)
-     document.write(`${key} - ${a1[key]}` +'<br>')
-         
+      function Product(productTitle,productPrice,productNumber){
+      this.title=productTitle
+      this.price=productPrice
+      this.number=productNumber
+      }
+      Product.prototype.getTotalPrice=function(){
+          return this.price*this.number
+      }
+      
      
     </script>
 </head>
