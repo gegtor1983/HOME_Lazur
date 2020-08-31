@@ -32,7 +32,13 @@ Rectangle.prototype.toString=function(){
 }
 let r1= new Rectangle(2,7)
 document.write(r1 +'<br>')
-r1._sideA=-70
+try {
+    r1.sideA=-70
+} catch (error) {
+    document.write ('Error </br>')
+    
+}
+
 document.write(r1 +'<br>')
 console.log(r1);
 
