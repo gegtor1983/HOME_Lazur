@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+function Rectangle(a,b) {
+    let _sideA //1.Опис закритого поля
+    Object.defineProperty(this,'sideA',{ //2. Опис пget,set
+        get:function(){return _sideA},
+        set:function(val){
+            if(val>=0) _sideA=val
+            else
+            throw new Error('The vale is incorrect') 
+        }
+    })
+    this.sideA=a //Перевірка поч.значення
+    let _sideB
+    Object.defineProperty(this,'sideB',{
+        get:function(){return _sideB},
+        set:function(val){
+            if(val>=0) _sideB=val
+            else
+            throw new Error('The value is incorrect') 
+        }
+    })
+    this.sideB=b
+}
+Rectangle.prototype.toString=function(){
+    return `${this.sideA} - ${this.sideB}`
+}
+let r1= new Rectangle(2,7)
+document.write(r1 +'<br>')
+r1._sideA=-70
+document.write(r1 +'<br>')
+console.log(r1);
+
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
