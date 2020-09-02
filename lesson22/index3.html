@@ -43,25 +43,26 @@
             const prodPrice=parseFloat(this.inpPrice).value
             const prodCount=parseFloat(this.inpCount).value
             this.addProduct(title,price,count)
+            this.render()
         }
         createInputForm(){
             let div=document.createElement('div')
             let label=document.createElement('lebel')
-            label.innerText('Title')
+            label.innerText='Title'
             this.inpTitle=document.createElement('input')
             label.appendChild(this.inpTitle)
             div.appendChild(label)
 
 
             label=document.createElement('lebel')
-            label.innerText('Price')
+            label.innerText='Price'
             this.inpPrice=document.createElement('input')
             label.appendChild(this.inpPrice)
             div.appendChild(label)
 
 
             label=document.createElement('lebel')
-            label.innerText('Count')
+            label.innerText='Count'
             this.inpCount=document.createElement('input')
             label.appendChild(this.inpCount)
             div.appendChild(label)
