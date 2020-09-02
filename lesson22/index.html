@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let products = [
+            {
+                title: "Tv",
+                price: "5000",
+                count: "10"
+            },
+            {
+                title: "Notebook",
+                price: "12000",
+                count: "27"
+            },
+            {
+                title: "phone",
+                price: "7000",
+                count: "100"
+            },
+            {
+                title: "mouse",
+                price: "200",
+                count: "67"
+            },
+        ]
+
+        //-------Дешевші за 7000
+        let pr2 = products.filter(products => products.price < 7000)
+        console.log(pr2)
+
+        //----------загальна вартість більша 100000
+        let pr3 = products.filter(products => parseFloat(products.price) * parseFloat(products.count) > 100000)
+        console.log(pr3)
+
+        //-----------Упорядкувати за зростанням ціни
+        let pr4 = products.sort((products1, products2) => products1.price - products2.price)
+        console.log(pr4)
+
+        //-----------------видалення обєкту
+        //------ products.splice(2, 1)
+
+
+        // --------------пошук обєкту в масиві
+        let el = products.find(prod => prod.title === 'phone')
+        if (el) console.log(el)
+
+        localStorage.setItem ('products',JSON.stringify (products))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
