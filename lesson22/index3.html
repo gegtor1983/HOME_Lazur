@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Створити продуктовий магазин
+        // Функц можливості
+        //Фільтр ціна
+        class Store {
+            constructor(storeTitle) {
+                this.storeTitle = storeTitle
+                this.loadDate()
+
+            }
+            saveDate() {
+                localStorage.setItem(this.storeTitle, JSON.stringify(this.Products))
+            }
+            loadDate() {
+                if (localStorage.getItem(this.storeTitle)) //перевіряємо 
+                    this.Products = JSON.parse(localStorage.getItem(this.storeTitle))
+                else this.Products = []
+            }
+            addProduct(title,price,count){
+            this.Products.push(
+                {
+                    title:prodTitle,
+                    price:prodPrice,
+                    count:prodCount
+                }
+            )
+        }
+        filterByPrice(price){
+            return this.Products.filter(prod=>prod.price===price)
+        }
+        filterByTitle(title){
+            return this.Products.filter(prod=>prod.title===title)
+        }
+        onAdd(){
+            const prodTitle=this.inpTitle.value
+            const prodPrice=parseFloat(this.inpPrice).value
+            const prodCount=parseFloat(this.inpCount).value
+            this.addProduct(title,price,count)
+        }
+        createInputForm(){
+            let div=document.createElement('div')
+            let label=document.createElement('lebel')
+            label.innerText('Title')
+            this.inpTitle=document.createElement('input')
+            label.appendChild(this.inpTitle)
+            div.appendChild(label)
+
+
+            label=document.createElement('lebel')
+            label.innerText('Price')
+            this.inpPrice=document.createElement('input')
+            label.appendChild(this.inpPrice)
+            div.appendChild(label)
+
+
+            label=document.createElement('lebel')
+            label.innerText('Count')
+            this.inpCount=document.createElement('input')
+            label.appendChild(this.inpCount)
+            div.appendChild(label)
+
+            const btn=document.createElement('button')
+            btn.innerText='Add'
+            btn.onclick=this.anAdd.bind(this)
+            div.appendChild(btn)
+            
+            return div
+
+
+
+        }
+
+        printProduct (){
+            const table=document.createElement('table')
+            let tr=document.createElement('tr')
+            let th=document.createElement('th')
+            th.innerText='price'
+            tr.appendChild (th)
+            th.document.createElement('th')
+        }
+        render(containerId){
+
+
+
+        }
+
+        }
+    </script>
+</head>
+
+<body>
+<div id="container">
+
+</div>
+</body>
+
+</html>
