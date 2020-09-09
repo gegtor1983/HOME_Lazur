@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Dice{
+    constructor(min=1, max=6){
+        this.min=min
+        this.max=max
+    }
+    getRandomNumber(){
+        return Math.floor(this.min+Math.random()*(this.max-this.min+1))
+    }
+    check(){
+        this.userNum=parseInt(this.numInput.value)
+        this.compNum=this.getRandomNumber()
+        const message=`${this.userNum===this.compNum?'Вгадав': 'Не вгадав'}
+        <br>
+        Ваше чило: ${this.userNum} Загадане число: ${this.compNum}
+        `
+        this.messageDiv.innerHTML=message
+    }
+    render(containerId){
+        const container=document.getElementById(containerId)
+        let div= document.createElement('div')
+        div.innerText=`min = ${this.min},  max=${this.max}`
+        container.appendChild(div)
+        div= document.createElement('div')
+        this.numInput=document.createElement('input')
+        div.appendChild(this.numInput)
+        const btn=document.createElement('button')
+        btn.innerText='Check'
+        btn.onclick=this.check.bind(this)
+        div.appendChild(btn)
+        container.appendChild(div)
+        this.messageDiv= document.createElement('div')
+        container.appendChild(this.messageDiv)
+    }
+}
+class attemptCount extends Dice(){
+    
+}
+window.onload=function(){
+    // const game= new Game()
+    const cube= new Dice()
+    cube.render('gamePlace')
+}
+
+    </script>
+</head>
+<body>
+    <div id="gamePlace">
+    </div>
+    
+</body>
+</html>
