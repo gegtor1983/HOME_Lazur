@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пошук за номерним знаком автособіля</title>
+    <script>
+        function myFunction() {
+           
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Пошук по номеру..">
+
+    <table id="myTable" , border="3px">
+        <tr class="header">
+            <th>Номерний знак</th>
+            <th>Область</th>
+        </tr>
+        <tr>
+            <td>АО</td>
+            <td>Закарпатська область</td>
+        </tr>
+        <tr>
+            <td>АА</td>
+            <td>м. Київ</td>
+        </tr>
+        <tr>
+            <td>АВ</td>
+            <td>Вінницька область</td>
+        </tr>
+        <tr>
+            <td>АС</td>
+            <td>Волынская область</td>
+        </tr>
+        <tr>
+            <td>АЕ</td>
+            <td>Дніпропетровська область</td>
+        </tr>
+        <tr>
+            <td>АН</td>
+            <td>Донецька область</td>
+        </tr>
+        <tr>
+            <td>АІ</td>
+            <td>Київська область</td>
+        </tr>
+        <tr>
+            <td>АМ</td>
+            <td>Житомирська область</td>
+        </tr>
+        <tr>
+            <td>АР</td>
+            <td>Запорізька область</td>
+        </tr>
+        <tr>
+            <td>АТ</td>
+            <td>Івано-Франківська область</td>
+        </tr>
+        <tr>
+            <td>АХ</td>
+            <td>Харківська область</td>
+        </tr>
+        <tr>
+            <td>ВА</td>
+            <td>Кіровоградська область</td>
+        </tr>
+        <tr>
+            <td>ВВ</td>
+            <td>Луганська область</td>
+        </tr>
+        <tr>
+            <td>ВС</td>
+            <td>Львівська область</td>
+        </tr>
+        <tr>
+            <td>ВЕ</td>
+            <td>Миколаївська область</td>
+        </tr>
+        <tr>
+            <td>ВН</td>
+            <td>Одеська область</td>
+        </tr>
+        <tr>
+            <td>ВІ</td>
+            <td>Полтавська область</td>
+        </tr>
+        <tr>
+            <td>ВК</td>
+            <td>Рівненська область</td>
+        </tr>
+        <tr>
+            <td>ВМ</td>
+            <td>Сумська область</td>
+        </tr>
+        <tr>
+            <td>ВО</td>
+            <td>Тернопільська область</td>
+        </tr>
+        <tr>
+            <td>ВТ</td>
+            <td>Херсонська область</td>
+        </tr>
+        <tr>
+            <td>ВХ</td>
+            <td>Хмельницька область</td>
+        </tr>
+        <tr>
+            <td>СА</td>
+            <td>Черкаська область</td>
+        </tr>
+        <tr>
+            <td>СІ</td>
+            <td>Чернігівська область</td>
+        </tr>
+        <tr>
+            <td>СЕ</td>
+            <td>Чернівецька область</td>
+        </tr>
+    </table>
+</body>
+
+</html>
